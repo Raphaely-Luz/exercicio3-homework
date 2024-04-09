@@ -1,1 +1,20 @@
 
+loja= "Quero Tinta"
+print("Olá, bem-vinde", loja, "Para que possamos te ajudar, informe os dados a seguir")
+
+cobertura_tinta= 1/3
+litro_lata= 18
+preco_lata= 80.00
+
+
+m_quadrado= float(input("Informe o tamanho do metro quadrado a ser pintado:"))
+qtd_tinta_mqd= int((m_quadrado * cobertura_tinta) + 0.5)
+print("1- A quantidade de litros necessária para pintar", m_quadrado,"m² é: ", qtd_tinta_mqd,"Litros")
+
+qtd_latas= int((qtd_tinta_mqd/litro_lata) + 0.5)
+print("2- A quantidade de latas de tinta para pintar o m² informado é: ", qtd_latas, "latas de tinta")
+
+valor_total_lata= qtd_latas * preco_lata
+print("3- Você precisa comprar", qtd_latas, "latas de tinta e gastará R$", valor_total_lata, "reais")
+
+print("Agradecemos suas escolha a", loja, ",volte sempre! <3")

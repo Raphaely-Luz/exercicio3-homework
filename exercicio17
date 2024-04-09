@@ -1,1 +1,43 @@
+loja= "Quero Tintas"
+print("Olá, bem-vinde", loja, "Aqui informaremos a quantidade correta de litros, entre latas e galões, para não ter desperdicio! Economize seu dinheiro agora na Quero Tintas")
 
+cobertura_tinta= 1/6
+litro_lata= 18
+preco_lata= 80.00
+galao_tinta= 3.6
+preco_galao= 25.00
+extra= 0.10
+
+
+mt_quadrado= float(input("Informe o tamanho do metro quadrado a ser pintado:"))
+qtd_tinta_mqd= int((mt_quadrado * cobertura_tinta) * (1 + extra) + 0.5)
+
+qtd_latas= int((qtd_tinta_mqd/litro_lata)*(1+extra) + 0.5)
+qtd_galao= int((qtd_tinta_mqd/galao_tinta)*(1+extra) + 0.5)
+
+
+valor_total_lata= qtd_latas * preco_lata
+print("Aqui está o total latas", valor_total_lata)
+valor_total_galao= qtd_galao * preco_galao
+print("Aqui está a total galões", valor_total_galao)
+
+
+sobra_tinta_lata_litro= (qtd_latas * litro_lata) - qtd_tinta_mqd
+print("Sobrará isso de lata", sobra_tinta_lata_litro)
+sobra_tinta_galao_litro= int((qtd_galao * galao_tinta) - qtd_tinta_mqd)
+print("Sobrará isso de galao", sobra_tinta_galao_litro)
+
+melhor_opcao_compra= qtd_tinta_mqd 
+
+preco_total_combinacao = ((qtd_latas * preco_lata) + (qtd_galao * preco_galao))
+litros_economizados = ((qtd_latas * litro_lata + qtd_galao * galao_tinta) - qtd_tinta_mqd)
+economia_total = ((qtd_latas * preco_lata + qtd_galao * preco_galao) - preco_total_combinacao)
+
+
+print("O necessario de tinta para pintar", mt_quadrado,"m² é: ", qtd_tinta_mqd,"Litros")
+print("O necessario de latas de tinta de 18L para pintar o m² informado é: ", qtd_latas, "gastará R$", valor_total_lata, "reais")
+print("O necessario de  galões de tinta com 3.6L para pintar o m² informado é: ", qtd_galao, "gastará R$", valor_total_galao, "reais")
+print("Dos", mt_quadrado, "m² informados, temos a sobra de:\n-",sobra_tinta_lata_litro,"Litros na lata de tinta.\n-", sobra_tinta_galao_litro, "litros no galão de tinta")
+print("Economizara", economia_total)
+print("6- O valor total é de ", economia_total, "reais.")
+print("Agradecemos a preferencia a", loja, "Volte sempre! <3")
